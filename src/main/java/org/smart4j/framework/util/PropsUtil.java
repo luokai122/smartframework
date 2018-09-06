@@ -69,5 +69,12 @@ public class PropsUtil {
         return map;
     }
 
+    public static String getString(Properties props, String key) {
+        String value = "";
+        if (props.containsKey(key)) {
+            value = props.getProperty(key);
+        }
 
+        return value;
+    }
 }
