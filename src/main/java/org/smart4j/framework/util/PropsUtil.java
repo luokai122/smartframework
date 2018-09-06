@@ -77,4 +77,13 @@ public class PropsUtil {
 
         return value;
     }
+
+    public static String getString(Properties props, String key, String defalutValue) {
+        String value = defalutValue;
+        if (props.containsKey(key)) {
+            value = props.getProperty(key);
+        }
+
+        return value;
+    }
 }
