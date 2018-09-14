@@ -5,7 +5,6 @@ import org.smart4j.framework.annotation.Inject;
 import org.smart4j.framework.util.CollectionUtil;
 import org.smart4j.framework.util.ReflectionUtil;
 
-import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.util.Collection;
 import java.util.Map;
@@ -17,6 +16,9 @@ public final class IocHelper {
 
     /**
      * 实例化IocHelper，进行初始化
+     * 此时，Ioc框架管理的对象都是单例对象，由于Ioc框架底层还是从BeanHelper中获取
+     * BeanMap的，而BeanMap中的对象都是事先创建好并放入这个Bean容器
+     * 所以所有的对象都是单例。
      */
     static {
         //获取所有的Bean类与Bean实例之间的映射关系
